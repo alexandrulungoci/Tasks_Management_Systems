@@ -5,13 +5,14 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Projects")
-public class Projects {
+public class ProjectModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    private Date deadLine;
+    private Date deadline;
+    private String status;
 
 
     public int getId() {
@@ -30,11 +31,19 @@ public class Projects {
         this.name = name;
     }
 
-    public Date getDeadLine() {
-        return deadLine;
+    public Date getDeadline() {
+        return deadline;
     }
 
-    public void setDeadLine(Date deadLine) {
-        this.deadLine = deadLine;
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

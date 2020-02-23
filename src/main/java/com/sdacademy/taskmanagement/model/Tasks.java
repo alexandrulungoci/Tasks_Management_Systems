@@ -13,7 +13,7 @@ public class Tasks {
 
     @ManyToOne
     @JoinColumn(name = "id_Project")
-    private Projects projects;
+    private ProjectModel projectModel;
 
     public int getId() {
         return id;
@@ -31,11 +31,11 @@ public class Tasks {
         this.name = name;
     }
 
-    public Projects getProjects() {
-        return projects;
+    public ProjectModel getProjectModel() {
+        return projectModel;
     }
 
-    public void setProjects(Projects projects) {
-        this.projects = projects;
+    public void setProjectModel(ProjectModel projectModel) {
+        this.projectModel = projectModel;
     }
 }

@@ -1,0 +1,21 @@
+
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+k
+;src/main/java/com/sdacademy/taskmanagement/model/Users.java,0\1\0154c1c5c28edfa3fe8b85ec610ca2d3ce447b55
+u
+Esrc/main/java/com/sdacademy/taskmanagement/services/UsersService.java,d\1\d1ef084428280ccc83c4ada7ce62f6c758b7538a
+d
+4src/main/java/com/sdacademy/taskmanagement/Main.java,e\5\e5c3191f7f1db1ffe2a03a835cb0a2a9da572c7d
+k
+;src/main/java/com/sdacademy/taskmanagement/model/Tasks.java,4\9\497758c0a7a13290b9cf31f2a444b1453155c007
+g
+7src/main/java/com/sdacademy/taskmanagement/dao/Dao.java,1\0\10ec77af307def92c4c34f10170a71a821c250a2
+w
+Gsrc/main/java/com/sdacademy/taskmanagement/services/ProjectService.java,c\3\c3a19555557f5135cb0e5654ca2dba9e9db609f8
+r
+Bsrc/main/java/com/sdacademy/taskmanagement/model/ProjectModel.java,1\0\103784e3a88b87b5593aef7110442d723ed841b9
+l
+<src/main/java/com/sdacademy/taskmanagement/UI/ProjectUI.java,3\1\312b531d5f860090843fc2ca5e836d26c2b07c35

@@ -1,16 +1,19 @@
 package com.sdacademy.taskmanagement;
 
-import com.sdacademy.taskmanagement.UI.Ui;
-import com.sdacademy.taskmanagement.dao.Dao;
+import com.sdacademy.taskmanagement.UI.ProjectUI;
+
+import java.text.ParseException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
 
-     
+        ProjectUI projectUI = new ProjectUI();
 
-        Dao dao = new Dao();
+        projectUI.projectsMenu();
+
+
 
     }
 }
