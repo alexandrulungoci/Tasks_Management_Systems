@@ -1,8 +1,11 @@
 package com.sdacademy.taskmanagement.UI;
 
-import com.sdacademy.taskmanagement.dao.Dao;
+import com.sdacademy.taskmanagement.dao.ProjectDao;
 import com.sdacademy.taskmanagement.model.ProjectModel;
+import com.sdacademy.taskmanagement.model.SubTaskModel;
+import com.sdacademy.taskmanagement.model.UserModel;
 import com.sdacademy.taskmanagement.services.ProjectService;
+import com.sdacademy.taskmanagement.services.UsersService;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,7 +17,8 @@ public class ProjectUI {
 
     Scanner scanner = new Scanner(System.in);
     ProjectService projectService = new ProjectService();
-    Dao dao = new Dao();
+    ProjectDao projectDao = new ProjectDao();
+    UsersService usersService = new UsersService();
 
 
 
@@ -38,6 +42,8 @@ public class ProjectUI {
                 printProjectsExceeded();
             } else if (option == 7) {
                 printFiveDaysToDeadline();
+            } else if (option == 8) {
+                findProjectByUser();
             }
         }
     }
@@ -51,6 +57,8 @@ public class ProjectUI {
         System.out.println("5. Projects in progress");
         System.out.println("6. Deadline exceeded");
         System.out.println("7. Five days to deadline");
+        System.out.println("8. Find project by user");
+        System.out.println("9. Exit");
 
     }
 
@@ -67,10 +75,11 @@ public class ProjectUI {
     }
 
     public void printProjects() {
-        List<ProjectModel> projectModelList = dao.getProjects();
+        List<ProjectModel> projectModelList = projectDao.getAll();
         projectModelList.forEach(p -> {
             System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
                     + p.getDeadline());
+
         });
     }
 
@@ -123,11 +132,11 @@ public class ProjectUI {
         System.out.println();
         int id = scanner.nextInt();
         scanner.nextLine();
-        projectService.deleteProject(id);
+        projectService.removeProject(id);
     }
 
     public void printProjectsInProgress(){
-        List<ProjectModel> projectModelList = dao.getProjectsInProgress();
+        List<ProjectModel> projectModelList = projectDao.getProjectsInProgress();
         projectModelList.forEach(p -> {
             System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
                     + p.getDeadline());
@@ -135,7 +144,7 @@ public class ProjectUI {
     }
 
     public void printProjectsExceeded(){
-        List<ProjectModel> projectModelList = dao.getProjectsExceeded();
+        List<ProjectModel> projectModelList = projectDao.getProjectsExceeded();
         projectModelList.forEach(p -> {
             System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
                     + p.getDeadline());
@@ -143,10 +152,24 @@ public class ProjectUI {
     }
 
     public void printFiveDaysToDeadline(){
-        List<ProjectModel> projectModelList = dao.getFiveDaysToDeadline();
+        List<ProjectModel> projectModelList = projectDao.getFiveDaysToDeadline();
         projectModelList.forEach(p -> {
             System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
                     + p.getDeadline());
+        });
+    }
+
+    public void findProjectByUser(){
+        List<UserModel> userModelList = usersService.getUsers();
+        userModelList.forEach(u->{
+            System.out.println(u.getId()+" "+u.getFirstName());
+        });
+        System.out.println("Select user");
+        int idUser = scanner.nextInt();
+        scanner.nextLine();
+        List<ProjectModel> projectModelList = projectDao.getAllByUser(idUser);
+        projectModelList.forEach(p->{
+            System.out.println(p.getName());
         });
     }
 

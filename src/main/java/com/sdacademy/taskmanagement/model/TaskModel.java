@@ -1,10 +1,12 @@
 package com.sdacademy.taskmanagement.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Tasks")
-public class Tasks {
+public class TaskModel extends Model{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,15 +15,13 @@ public class Tasks {
 
     @ManyToOne
     @JoinColumn(name = "id_Project")
-    private ProjectModel projectModel;
+   private ProjectModel projectModel;
 
-    public int getId() {
-        return id;
-    }
+    @OneToMany(mappedBy = "taskModel")
+    List<SubTaskModel> subTaskModelList = new ArrayList<>();
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
+
 
     public String getName() {
         return name;
@@ -37,5 +37,17 @@ public class Tasks {
 
     public void setProjectModel(ProjectModel projectModel) {
         this.projectModel = projectModel;
+    }
+
+    public List<SubTaskModel> getSubTaskModelList() {
+        return subTaskModelList;
+    }
+
+    public void setSubTaskModelList(List<SubTaskModel> subTaskModelList) {
+        this.subTaskModelList = subTaskModelList;
+    }
+
+    public int getId() {
+        return id;
     }
 }

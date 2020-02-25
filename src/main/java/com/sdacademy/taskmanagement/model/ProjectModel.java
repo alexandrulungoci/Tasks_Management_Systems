@@ -1,11 +1,13 @@
 package com.sdacademy.taskmanagement.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Projects")
-public class ProjectModel {
+public class ProjectModel extends Model{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,14 +16,11 @@ public class ProjectModel {
     private Date deadline;
     private String status;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "projectModel")
+    List<TaskModel> taskModelList = new ArrayList<>();
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     public String getName() {
         return name;
@@ -46,4 +45,18 @@ public class ProjectModel {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public List<TaskModel> getTaskModelList() {
+        return taskModelList;
+    }
+
+    public void setTaskModelList(List<TaskModel> taskModelList) {
+        this.taskModelList = taskModelList;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
+
+

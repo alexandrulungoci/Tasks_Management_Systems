@@ -1,0 +1,13 @@
+
+isquid:S3252"KUse static access with "org.hibernate.cfg.AvailableSettings" for "DIALECT".(øŒÒÞ8Ü·ÙÉ‡.
+hsquid:S2095+"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8ŽÉÝÉ‡.
+ssquid:S3252"PUse static access with "org.hibernate.cfg.AvailableSettings" for "HBM2DDL_AUTO".(Îôà°ûÿÿÿÿ8Ü·ÙÉ‡.
+hsquid:S2095<"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8’ÑåÉ‡.
+msquid:S3252"JUse static access with "org.hibernate.cfg.AvailableSettings" for "DRIVER".(´ÖûÕÿÿÿÿÿ8Ü·ÙÉ‡.
+fsquid:S3252"HUse static access with "org.hibernate.cfg.AvailableSettings" for "PASS".(°öªƒ8Ü·ÙÉ‡.
+usquid:S00117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôù„±ûÿÿÿÿ8ŽÉÝÉ‡.
+esquid:S3252"GUse static access with "org.hibernate.cfg.AvailableSettings" for "URL".(‡íü•8Ü·ÙÉ‡.
+hsquid:S20953"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8ÇÛäÉ‡.
+hsquid:S2095C"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8³ÝÿÉ‡.
+osquid:S3252"LUse static access with "org.hibernate.cfg.AvailableSettings" for "SHOW_SQL".(ÌŸåøÿÿÿÿ8Ü·ÙÉ‡.
+ksquid:S3252"HUse static access with "org.hibernate.cfg.AvailableSettings" for "USER".(Ì¦ˆ÷øÿÿÿÿ8Ü·ÙÉ‡.
