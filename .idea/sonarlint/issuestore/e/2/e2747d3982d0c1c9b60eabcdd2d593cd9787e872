@@ -1,0 +1,3 @@
+
+®%squid:RedundantThrowsDeclarationCheck"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(˜‡®Ëùÿÿÿÿ8Öíé®‰.
+©%squid:RedundantThrowsDeclarationCheck%"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(äÑÖ—8–¢ë®‰.

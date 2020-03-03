@@ -1,15 +1,18 @@
 package com.sdacademy.taskmanagement.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "SubTasks")
-public class SubTaskModel extends Model{
+public class SubTaskModel extends Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
+    private Date deadline;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "id_Task")
@@ -18,7 +21,6 @@ public class SubTaskModel extends Model{
     @ManyToOne
     @JoinColumn(name = "id_User")
     private UserModel userModel;
-
 
 
     public String getName() {
@@ -55,5 +57,25 @@ public class SubTaskModel extends Model{
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

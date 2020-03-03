@@ -6,11 +6,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "Users")
-public class UserModel extends Model{
+public class UserModel extends Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-private int id;
+    private int id;
     private String lastName;
     private String firstName;
     private String userName;

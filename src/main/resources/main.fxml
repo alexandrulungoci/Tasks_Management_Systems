@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sdacademy.taskmanagement.MainController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="722.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Button layoutX="47.0" layoutY="99.0" mnemonicParsing="false" onAction="#onTaskClick" text="Task menu" />
+            <Button layoutX="47.0" layoutY="162.0" mnemonicParsing="false" onAction="#onSubTaskClick" text="SubTask menu" />
+            <Button layoutX="47.0" layoutY="222.0" mnemonicParsing="false" onAction="#onUserClick" text="User menu" />
+            <Button layoutX="47.0" layoutY="45.0" mnemonicParsing="false" onAction="#onProjectClick" text="ProjectMenu" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

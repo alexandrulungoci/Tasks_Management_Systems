@@ -1,35 +1,47 @@
 
-Hsquid:S00108+")Either remove or fill this block of code.(Ìª’ñ8ïÿù‹‡.
-V
-squid:S1067"9Replace this use of System.out or System.err by a logger.(å°şé8ïÿù‹‡.
-U
-squid:S106]"9Replace this use of System.out or System.err by a logger.(¡ûJ8ÅëâÌ‡.
-[
-squid:S106N"9Replace this use of System.out or System.err by a logger.(ñ¬âÂùÿÿÿÿ8ë„½‘‡.
-Osquid:S1602\",Remove useless curly braces around statement(˜æ”êúÿÿÿÿ8ÅëâÌ‡.
-U
-squid:S106H"9Replace this use of System.out or System.err by a logger.(¡ûJ8¨®¿‘‡.
-Hsquid:S00108%")Either remove or fill this block of code.(€êÚ’8ïÿù‹‡.
-[
-squid:S106@"9Replace this use of System.out or System.err by a logger.(˜¹İıÿÿÿÿ8ÁçÊŒ‡.
-[
-squid:S1064"9Replace this use of System.out or System.err by a logger.(Á–‘Ïÿÿÿÿÿ8ïÿù‹‡.
-Msquid:S00108'")Either remove or fill this block of code.(İå¹™şÿÿÿÿ8ïÿù‹‡.
-V
-squid:S106e"9Replace this use of System.out or System.err by a logger.(˜’à8‡”ìÌ‡.
-Osquid:S1602d",Remove useless curly braces around statement(î¢ù‡ûÿÿÿÿ8‡”ìÌ‡.
-[
-squid:S106J"9Replace this use of System.out or System.err by a logger.(§Š¹‘ıÿÿÿÿ8‹ÎÃ‘‡.
-Hsquid:S00108)")Either remove or fill this block of code.(¾àßÓ8ïÿù‹‡.
-Msquid:S00108-")Either remove or fill this block of code.(Œ®í¨øÿÿÿÿ8ïÿù‹‡.
-[
-squid:S106_"9Replace this use of System.out or System.err by a logger.(§Š¹‘ıÿÿÿÿ8ÅëâÌ‡.
-V
-squid:S106C"9Replace this use of System.out or System.err by a logger.(ü˜½­8ïÿù‹‡.
-U
-squid:S1066"9Replace this use of System.out or System.err by a logger.(½¦Š8ïÿù‹‡.
-V
-squid:S1065"9Replace this use of System.out or System.err by a logger.(Ó‰ƒ 8ïÿù‹‡.
-Jsquid:S1602?",Remove useless curly braces around statement(Ğíˆæ8ÁçÊŒ‡.
-Osquid:S1602G",Remove useless curly braces around statement(˜æ”êúÿÿÿÿ8¨®¿‘‡.
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(´Ö½ëøÿÿÿÿ
+Z	java:S1067"9Replace this use of System.out or System.err by a logger.(‘ÎÜúøÿÿÿÿ8¥ğÍ¿‰.
+O
+java:S1602§",Remove useless curly braces around statement(™ŒÈÖùÿÿÿÿ8¥ğÍ¿‰.
+[	java:S106¨"9Replace this use of System.out or System.err by a logger.(Ø§ıèÿÿÿÿÿ8¥ğÍ¿‰.
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(´Ö½ëøÿÿÿÿ8¥ğÍ¿‰.
+†
+java:S1488‹"hImmediately return this expression instead of assigning it to the temporary variable "subTaskModelList".(¦äŠŞ8¥ğÍ¿‰.
+U	java:S106E"9Replace this use of System.out or System.err by a logger.(Ì€ñ×8¥ğÍ¿‰.
+O
+java:S1602‘",Remove useless curly braces around statement(î¢ù‡ûÿÿÿÿ8¥ğÍ¿‰.
+Z	java:S1065"9Replace this use of System.out or System.err by a logger.(Á–‘Ïÿÿÿÿÿ8¥ğÍ¿‰.
+Z	java:S106M"9Replace this use of System.out or System.err by a logger.(ñ¬âÂùÿÿÿÿ8¥ğÍ¿‰.
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(ÊÔìúÿÿÿÿ8¥ğÍ¿‰.
+I
+java:S1602v",Remove useless curly braces around statement(›­çË8¥ğÍ¿‰.
+[	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(ÜÂŒ’ûÿÿÿÿ8¥ğÍ¿‰.
+V	java:S106—"9Replace this use of System.out or System.err by a logger.(ºúÅÊ8¥ğÍ¿‰.
+V	java:S106’"9Replace this use of System.out or System.err by a logger.(ìÕ±¸8¥ğÍ¿‰.
+T	java:S106y"9Replace this use of System.out or System.err by a logger.(±‹Ü78¥ğÍ¿‰.
+V	java:S106š"9Replace this use of System.out or System.err by a logger.(Ô°™ı8ËÜˆç‰.
+U	java:S106<"9Replace this use of System.out or System.err by a logger.(å°şé8¥ğÍ¿‰.
+I
+java:S1602D",Remove useless curly braces around statement(Ğíˆæ8¥ğÍ¿‰.
+Z	java:S106P"9Replace this use of System.out or System.err by a logger.(®ù¬«ùÿÿÿÿ8¥ğÍ¿‰.
+N
+java:S1602h",Remove useless curly braces around statement(˜æ”êúÿÿÿÿ8¥ğÍ¿‰.
+U	java:S1066"9Replace this use of System.out or System.err by a logger.(Ó‰ƒ 8¥ğÍ¿‰.
+U	java:S106b"9Replace this use of System.out or System.err by a logger.(êÔËŠ8¥ğÍ¿‰.
+E	java:S108.")Either remove or fill this block of code.(Ìª’ñ8¥ğÍ¿‰.
+Z	java:S106`"9Replace this use of System.out or System.err by a logger.(¡™Ÿıùÿÿÿÿ8¥ğÍ¿‰.
+Z	java:S106k"9Replace this use of System.out or System.err by a logger.(§Š¹‘ıÿÿÿÿ8¥ğÍ¿‰.
+Z	java:S106g"9Replace this use of System.out or System.err by a logger.(¤ƒ– ûÿÿÿÿ8¥ğÍ¿‰.
+[	java:S106†"9Replace this use of System.out or System.err by a logger.(¥æÇ¢şÿÿÿÿ8¥ğÍ¿‰.
+V	java:S106˜"9Replace this use of System.out or System.err by a logger.(‹Œ»Ø8¥ğÍ¿‰.
+[	java:S106™"9Replace this use of System.out or System.err by a logger.(İ¿©ğÿÿÿÿÿ8¥ğÍ¿‰.
+U	java:S1069"9Replace this use of System.out or System.err by a logger.( é¹¤8¥ğÍ¿‰.
+U	java:S106I"9Replace this use of System.out or System.err by a logger.(ü˜½­8¥ğÍ¿‰.
+T	java:S106i"9Replace this use of System.out or System.err by a logger.(¡ûJ8¥ğÍ¿‰.
+T	java:S106w"9Replace this use of System.out or System.err by a logger.(‹‰óF8¥ğÍ¿‰.
+Z	java:S106z"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¥ğÍ¿‰.
+Z	java:S106}"9Replace this use of System.out or System.err by a logger.(à’Ãøÿÿÿÿ8¥ğÍ¿‰.
+O
+java:S1602…",Remove useless curly braces around statement(˜æ”êúÿÿÿÿ8¥ğÍ¿‰.
+N
+java:S1602_",Remove useless curly braces around statement(î¢ù‡ûÿÿÿÿ8¥ğÍ¿‰.
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(‚îª—8¥ğÍ¿‰.

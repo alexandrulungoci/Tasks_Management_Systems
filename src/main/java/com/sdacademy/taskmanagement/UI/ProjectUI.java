@@ -3,15 +3,15 @@ package com.sdacademy.taskmanagement.UI;
 import com.sdacademy.taskmanagement.dao.ProjectDao;
 import com.sdacademy.taskmanagement.model.ProjectModel;
 import com.sdacademy.taskmanagement.model.SubTaskModel;
-import com.sdacademy.taskmanagement.model.UserModel;
 import com.sdacademy.taskmanagement.services.ProjectService;
+import com.sdacademy.taskmanagement.services.SubTaskService;
 import com.sdacademy.taskmanagement.services.UsersService;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class ProjectUI {
 
@@ -19,7 +19,8 @@ public class ProjectUI {
     ProjectService projectService = new ProjectService();
     ProjectDao projectDao = new ProjectDao();
     UsersService usersService = new UsersService();
-
+    SubTaskUI subTaskUI = new SubTaskUI();
+    SubTaskService subTaskService = new SubTaskService();
 
 
     public void projectsMenu() throws ParseException {
@@ -36,14 +37,8 @@ public class ProjectUI {
                 updateProject();
             } else if (option == 4) {
                 deleteProject();
-            }else if (option == 5) {
-                printProjectsInProgress();
-            } else if (option == 6) {
-                printProjectsExceeded();
-            } else if (option == 7) {
-                printFiveDaysToDeadline();
-            } else if (option == 8) {
-                findProjectByUser();
+            } else if (option == 5) {
+                findProjectsByUser();
             }
         }
     }
@@ -54,10 +49,8 @@ public class ProjectUI {
         System.out.println("2. Print projects");
         System.out.println("3. Update project");
         System.out.println("4. Delete project");
-        System.out.println("5. Projects in progress");
-        System.out.println("6. Deadline exceeded");
-        System.out.println("7. Five days to deadline");
-        System.out.println("8. Find project by user");
+        System.out.println("5. Find project by user");
+
         System.out.println("9. Exit");
 
     }
@@ -67,19 +60,17 @@ public class ProjectUI {
         System.out.println("Enter project name");
         String pName = scanner.nextLine();
         project.setName(pName);
-        System.out.println("Enter deadline  dd/MM/yyyy");
-        String date = scanner.next();
-        Date dateD = new SimpleDateFormat("dd/MM/yyyy").parse(date);
-        project.setDeadline(dateD);
         projectService.addProject(project);
     }
 
     public void printProjects() {
-        List<ProjectModel> projectModelList = projectDao.getAll();
-        projectModelList.forEach(p -> {
-            System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
-                    + p.getDeadline());
-
+        List<SubTaskModel> subTaskModelList = subTaskService.getAllSubTasks();
+        subTaskModelList.forEach(p -> {
+            System.out.println("(id) " + p.getTaskModel().getProjectModel().getId()
+                    + "     (Project) " + p.getTaskModel().getProjectModel().getName()
+                    + "     (Task) " + p.getTaskModel().getName()
+                    + "     (SubTask) " + p.getName()
+                    + "     (User) " + p.getUserModel().getFirstName() + " " + p.getUserModel().getLastName());
         });
     }
 
@@ -89,20 +80,20 @@ public class ProjectUI {
             printUpdateMenu();
             option = scanner.nextInt();
             if (option == 1) {
-               changeName();
+                changeName();
             } else if (option == 2) {
-                changeDeadLine();
+
             }
         }
     }
 
     public void printUpdateMenu() {
         System.out.println("1. Change project's name");
-        System.out.println("2. Change project's deadline");
+
         System.out.println("9. Exit");
     }
 
-    public void changeName(){
+    public void changeName() {
         System.out.println("Select id of the project you want to rename");
         printProjects();
         System.out.println();
@@ -111,18 +102,6 @@ public class ProjectUI {
         System.out.println("Enter new name");
         String newName = scanner.nextLine();
         projectService.changeName(id, newName);
-    }
-
-    public void changeDeadLine() throws ParseException {
-        System.out.println("Select id of the project for deadline change");
-        printProjects();
-        System.out.println();
-        int id = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Enter new deadline");
-        String date = scanner.nextLine();
-        Date dateD = new SimpleDateFormat("dd/MM/yyyy").parse(date);
-        projectService.changeDeadline(id, dateD);
     }
 
 
@@ -135,42 +114,19 @@ public class ProjectUI {
         projectService.removeProject(id);
     }
 
-    public void printProjectsInProgress(){
-        List<ProjectModel> projectModelList = projectDao.getProjectsInProgress();
-        projectModelList.forEach(p -> {
-            System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
-                    + p.getDeadline());
-        });
-    }
 
-    public void printProjectsExceeded(){
-        List<ProjectModel> projectModelList = projectDao.getProjectsExceeded();
-        projectModelList.forEach(p -> {
-            System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
-                    + p.getDeadline());
-        });
-    }
+    public void findProjectsByUser() {
+        List<SubTaskModel> subTaskModelList = subTaskUI.findSubTaskByUser();
 
-    public void printFiveDaysToDeadline(){
-        List<ProjectModel> projectModelList = projectDao.getFiveDaysToDeadline();
-        projectModelList.forEach(p -> {
-            System.out.println("(id) " + p.getId() + " (Name) " + p.getName() + " (Dead Line) "
-                    + p.getDeadline());
+        System.out.println("project by user");
+        Set<String> project = new HashSet<>();
+        subTaskModelList.forEach(s -> {
+            project.add(s.getTaskModel().getProjectModel().getName());
         });
-    }
+        project.forEach(p -> {
+            System.out.println(p);
+        });
 
-    public void findProjectByUser(){
-        List<UserModel> userModelList = usersService.getUsers();
-        userModelList.forEach(u->{
-            System.out.println(u.getId()+" "+u.getFirstName());
-        });
-        System.out.println("Select user");
-        int idUser = scanner.nextInt();
-        scanner.nextLine();
-        List<ProjectModel> projectModelList = projectDao.getAllByUser(idUser);
-        projectModelList.forEach(p->{
-            System.out.println(p.getName());
-        });
     }
 
 }

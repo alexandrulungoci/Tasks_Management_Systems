@@ -9,17 +9,22 @@ public class UsersService {
 
     UserDao userDao = new UserDao();
 
-    public void addUser(UserModel userModel){
+    public void addUser(UserModel userModel) {
         userDao.add(userModel);
     }
 
-    public List<UserModel> getUsers(){
+    public List<UserModel> getUsers() {
         List<UserModel> userModelList = userDao.getAll();
         return userModelList;
     }
 
-    public UserModel findUserById(int id){
+    public UserModel findUserById(int id) {
         UserModel userModel = userDao.findUserById(id);
+        return userModel;
+    }
+
+    public UserModel findUserByUserName(String userName){
+        UserModel userModel = userDao.findByUserName(userName);
         return userModel;
     }
 }

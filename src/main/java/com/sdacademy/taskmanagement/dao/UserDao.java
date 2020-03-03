@@ -1,40 +1,22 @@
 package com.sdacademy.taskmanagement.dao;
 
-import com.sdacademy.taskmanagement.model.*;
+import com.sdacademy.taskmanagement.model.UserModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.cfg.Environment;
 import org.hibernate.query.Query;
 
 import java.util.List;
-import java.util.Properties;
 
 public class UserDao implements DaoInterface<UserModel> {
 
     private SessionFactory sessionFactory;
 
-    public UserDao(){
-
-        Configuration configuration = new Configuration();
-        Properties properties = new Properties();
-        properties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-        properties.put(Environment.URL, "jdbc:mysql://localhost:3306/task_management_generic");
-        properties.put(Environment.USER, "root");
-        properties.put(Environment.PASS, "MySQL2020#$");
-        properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
-        properties.put(Environment.SHOW_SQL, "true");
-        properties.put(Environment.HBM2DDL_AUTO, "update");
-        configuration.setProperties(properties);
-        configuration.addAnnotatedClass(UserModel.class);
-        configuration.addAnnotatedClass(ProjectModel.class);
-        configuration.addAnnotatedClass(TaskModel.class);
-        configuration.addAnnotatedClass(SubTaskModel.class);
-        configuration.addAnnotatedClass(Model.class);
-
+    public UserDao() {
+        ConfigurationClass configurationClass = new ConfigurationClass();
+        Configuration configuration = configurationClass.getConfiguration();
         sessionFactory = configuration.buildSessionFactory();
-
     }
 
     @Override
@@ -68,5 +50,13 @@ public class UserDao implements DaoInterface<UserModel> {
         UserModel userModel = session.find(UserModel.class, id);
         transaction.commit();
         return userModel;
+    }
+
+    public UserModel findByUserName(String userName){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("from UserModel where userName = '"+userName+"'", UserModel.class);
+        List<UserModel> userModelList = query.getResultList();
+        return userModelList.get(0);
     }
 }

@@ -1,45 +1,28 @@
 package com.sdacademy.taskmanagement.dao;
 
-import com.sdacademy.taskmanagement.model.*;
+import com.sdacademy.taskmanagement.model.SubTaskModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.cfg.Environment;
 import org.hibernate.query.Query;
 
 import java.util.List;
-import java.util.Properties;
 import java.util.stream.Collectors;
 
 public class SubTaskDao implements DaoInterface<SubTaskModel> {
 
+
     private SessionFactory sessionFactory;
 
-    public SubTaskDao(){
-
-        Configuration configuration = new Configuration();
-        Properties properties = new Properties();
-        properties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-        properties.put(Environment.URL, "jdbc:mysql://localhost:3306/task_management_generic");
-        properties.put(Environment.USER, "root");
-        properties.put(Environment.PASS, "MySQL2020#$");
-        properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
-        properties.put(Environment.SHOW_SQL, "true");
-        properties.put(Environment.HBM2DDL_AUTO, "update");
-        configuration.setProperties(properties);
-        configuration.addAnnotatedClass(UserModel.class);
-        configuration.addAnnotatedClass(ProjectModel.class);
-        configuration.addAnnotatedClass(TaskModel.class);
-        configuration.addAnnotatedClass(SubTaskModel.class);
-        configuration.addAnnotatedClass(Model.class);
-
+    public SubTaskDao() {
+        ConfigurationClass configurationClass = new ConfigurationClass();
+        Configuration configuration = configurationClass.getConfiguration();
         sessionFactory = configuration.buildSessionFactory();
-
     }
 
-@Override
-    public void add (SubTaskModel subTaskModel) {
+    @Override
+    public void add(SubTaskModel subTaskModel) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(subTaskModel);
@@ -71,6 +54,14 @@ public class SubTaskDao implements DaoInterface<SubTaskModel> {
         transaction.commit();
     }
 
+    public SubTaskModel findById(int id) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        SubTaskModel subTaskModel = session.find(SubTaskModel.class, id);
+        transaction.commit();
+        return subTaskModel;
+    }
+
     public List<SubTaskModel> getSubTaskByUser(int id) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -80,5 +71,7 @@ public class SubTaskDao implements DaoInterface<SubTaskModel> {
         transaction.commit();
         return subTaskByUser;
     }
+
+
 
 }

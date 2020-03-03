@@ -43,3 +43,9 @@ n
 >src/main/java/com/sdacademy/taskmanagement/dao/SubTaskDao.java,8\8\88356f0c49af2558e9eb3ebd525d79747ca5e0fb
 k
 ;src/main/java/com/sdacademy/taskmanagement/dao/UserDao.java,4\7\47cd54c953c0f190369376b3132e6dfdf8bb12c3
+v
+Fsrc/main/java/com/sdacademy/taskmanagement/dao/ConfigurationClass.java,4\2\42065c0e375f92052da49c819cf251fa40de9c93
+h
+8src/main/java/com/sdacademy/taskmanagement/MainFxml.java,5\7\57255a7742eb9ea00988eada5bcadbc8c02dc8ff
+n
+>src/main/java/com/sdacademy/taskmanagement/MainController.java,e\2\e2747d3982d0c1c9b60eabcdd2d593cd9787e872

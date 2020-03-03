@@ -1,6 +1,11 @@
 package com.sdacademy.taskmanagement.UI;
 
+import com.sdacademy.taskmanagement.model.SubTaskModel;
+import com.sdacademy.taskmanagement.services.SubTaskService;
+
 import java.text.ParseException;
+import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProgramUI {
@@ -10,6 +15,23 @@ public class ProgramUI {
     TaskUI taskUI = new TaskUI();
     SubTaskUI subTaskUI = new SubTaskUI();
     UserUI userUI = new UserUI();
+    SubTaskService subTaskService = new SubTaskService();
+
+
+    public void setStatus() {
+        List<SubTaskModel> subTaskModelList = subTaskService.getAllSubTasks();
+        Date date = new Date();
+        subTaskModelList.forEach(sT -> {
+            if (sT.getDeadline().before(date) && !sT.getStatus().equals("completed")) {
+                sT.setStatus("exceeded");
+                subTaskService.updateSubTask(sT);
+            } else if(sT.getDeadline().after(date) && !sT.getStatus().equals("completed") ){
+                sT.setStatus("in progress");
+            subTaskService.updateSubTask(sT);
+            }
+        });
+    }
+
 
     public void programMenu() throws ParseException {
         int option = 0;
