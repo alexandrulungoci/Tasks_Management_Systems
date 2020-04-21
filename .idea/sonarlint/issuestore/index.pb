@@ -49,3 +49,6 @@ h
 8src/main/java/com/sdacademy/taskmanagement/MainFxml.java,5\7\57255a7742eb9ea00988eada5bcadbc8c02dc8ff
 n
 >src/main/java/com/sdacademy/taskmanagement/MainController.java,e\2\e2747d3982d0c1c9b60eabcdd2d593cd9787e872
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

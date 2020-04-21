@@ -1,14 +1,14 @@
 
 g
-java:S2095D"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8θΎÿ’.
-g
-java:S2095*"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
+java:S20959"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
 g
 java:S2095!"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
 g
-java:S20951"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
-g
-java:S20959"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
-g
 java:S2095"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
+g
+java:S2095*"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
+g
+java:S20951"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8Δ®Σ’.
 r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(τω„±ϋÿÿÿÿ8Δ®Σ’.
+g
+java:S2095D"EUse try-with-resources or close this "Session" in a "finally" clause.(΄Ο‚‘ωÿÿÿÿ8θΎÿ’.
