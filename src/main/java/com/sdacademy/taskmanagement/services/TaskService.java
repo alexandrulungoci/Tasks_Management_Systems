@@ -1,7 +1,6 @@
 package com.sdacademy.taskmanagement.services;
 
 import com.sdacademy.taskmanagement.dao.TaskDao;
-import com.sdacademy.taskmanagement.model.ProjectModel;
 import com.sdacademy.taskmanagement.model.TaskModel;
 
 import java.util.List;
@@ -15,12 +14,12 @@ public class TaskService {
     }
 
     public List<TaskModel> getTasks() {
-        List<TaskModel> taskModelList = taskDao.getAll();
+        List<TaskModel> taskModelList = taskDao.getAllTasks();
         return taskModelList;
     }
 
     public void deleteTask(int id) {
-        TaskModel taskToBeRemoved = taskDao.findById(id);
+        TaskModel taskToBeRemoved = taskDao.findTaskById(id);
         taskDao.remove(taskToBeRemoved);
     }
     

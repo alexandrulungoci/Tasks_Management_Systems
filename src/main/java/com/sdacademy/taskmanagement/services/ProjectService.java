@@ -14,23 +14,23 @@ public class ProjectService {
     }
 
     public List<ProjectModel> getAllProjects(){
-        List<ProjectModel> projectModelList = projectDao.getAll();
+        List<ProjectModel> projectModelList = projectDao.getAllProjects();
         return projectModelList;
     }
 
     public void removeProject(int id) {
-        ProjectModel projectToBeRemoved = projectDao.findById(id);
+        ProjectModel projectToBeRemoved = projectDao.findProjectById(id);
         projectDao.remove(projectToBeRemoved);
     }
 
     public void changeName(int id, String newName) {
-        ProjectModel projectToBeRenamed = projectDao.findById(id);
+        ProjectModel projectToBeRenamed = projectDao.findProjectById(id);
         projectToBeRenamed.setName(newName);
         projectDao.updateProject(projectToBeRenamed);
     }
 
     public ProjectModel findProjectById(int id) {
-        ProjectModel projectModel = projectDao.findById(id);
+        ProjectModel projectModel = projectDao.findProjectById(id);
         return projectModel;
     }
 

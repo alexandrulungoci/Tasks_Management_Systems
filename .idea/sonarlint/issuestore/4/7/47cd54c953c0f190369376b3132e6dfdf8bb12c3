@@ -1,15 +1,15 @@
 
 g
-java:S20950"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½ÎÍ½‰.
+java:S20958"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8°à½‰.
 g
 java:S2095"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½ÎÍ½‰.
+g
+java:S2095 "EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½ÎÍ½‰.
 R
 java:S14819"0Remove this unused "transaction" local variable.(¹æ¢üÿÿÿÿ8°à½‰.
 g
-java:S2095)"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½ÎÍ½‰.
-g
-java:S2095 "EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½ÎÍ½‰.
+java:S20950"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½ÎÍ½‰.
 a
 java:S18549"?Remove this useless assignment to local variable "transaction".(¹æ¢üÿÿÿÿ8°à½‰.
 g
-java:S20958"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8°à½‰.
+java:S2095)"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½ÎÍ½‰.

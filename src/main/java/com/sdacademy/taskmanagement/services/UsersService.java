@@ -14,7 +14,7 @@ public class UsersService {
     }
 
     public List<UserModel> getUsers() {
-        List<UserModel> userModelList = userDao.getAll();
+        List<UserModel> userModelList = userDao.getAllUsers();
         return userModelList;
     }
 

@@ -2,7 +2,7 @@
 g
 java:S2095:"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8èŠ ¿‰.
 g
-java:S2095#"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8èŠ ¿‰.
+java:S2095,"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8èŠ ¿‰.
 g
 java:S2095"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8èŠ ¿‰.
 g
@@ -10,4 +10,4 @@ java:S2095B"EUse try-with-resources or close this "Session" in a "finally" clau
 g
 java:S20953"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8èŠ ¿‰.
 g
-java:S2095,"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8èŠ ¿‰.
+java:S2095#"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8èŠ ¿‰.

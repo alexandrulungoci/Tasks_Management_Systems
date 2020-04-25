@@ -2,8 +2,6 @@ package com.sdacademy.taskmanagement.services;
 
 import com.sdacademy.taskmanagement.dao.SubTaskDao;
 import com.sdacademy.taskmanagement.model.SubTaskModel;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.Date;
 import java.util.List;
@@ -14,7 +12,7 @@ public class SubTaskService {
     SubTaskDao subTaskDao = new SubTaskDao();
 
     public List<SubTaskModel> getAllSubTasks() {
-        List<SubTaskModel> subTaskModelList = subTaskDao.getAll();
+        List<SubTaskModel> subTaskModelList = subTaskDao.getAllSubtasks();
         return subTaskModelList;
     }
 
@@ -27,18 +25,18 @@ public class SubTaskService {
     }
 
     public SubTaskModel findSubTaskById(int id) {
-        SubTaskModel subTaskModel = subTaskDao.findById(id);
+        SubTaskModel subTaskModel = subTaskDao.findSubtaskById(id);
         return subTaskModel;
     }
 
     public void changeDeadline(int id, Date newDeadline) {
-        SubTaskModel subTaskToBeChanged = subTaskDao.findById(id);
+        SubTaskModel subTaskToBeChanged = subTaskDao.findSubtaskById(id);
         subTaskToBeChanged.setDeadline(newDeadline);
         subTaskDao.updateSubTask(subTaskToBeChanged);
     }
 
     public List<SubTaskModel> getSubTaskWithoutUser(){
-        List<SubTaskModel> all = subTaskDao.getAll();
+        List<SubTaskModel> all = subTaskDao.getAllSubtasks();
         List<SubTaskModel> subTaskModelList = all.stream().filter(s-> s.getUserModel()==null).collect(Collectors.toList());
         return subTaskModelList;
     }

@@ -7,7 +7,6 @@ import com.sdacademy.taskmanagement.UI.TaskUI;
 import com.sdacademy.taskmanagement.UI.UserUI;
 import javafx.fxml.FXML;
 
-
 import java.text.ParseException;
 
 

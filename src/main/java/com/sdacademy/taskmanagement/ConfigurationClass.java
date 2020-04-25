@@ -1,4 +1,4 @@
-package com.sdacademy.taskmanagement.dao;
+package com.sdacademy.taskmanagement;
 
 import com.sdacademy.taskmanagement.model.*;
 import org.hibernate.cfg.Configuration;

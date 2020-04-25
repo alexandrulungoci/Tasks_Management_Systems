@@ -28,7 +28,7 @@ public class UserUI {
             } else if (option == 3) {
                 autoAssignSubTask();
             } else if (option == 4) {
-changeSubTaskStatus();
+                changeSubTaskStatus();
             } else if (option == 5) {
 
             } else if (option == 6) {
@@ -38,7 +38,6 @@ changeSubTaskStatus();
             }
         }
     }
-
 
 
     public void printUserMenu() {
@@ -69,29 +68,30 @@ changeSubTaskStatus();
         usersService.addUser(userModel);
     }
 
-    public UserModel login(){
+    public UserModel login() {
         System.out.println("Enter User Name");
         String userName = scanner.nextLine();
         System.out.println("Enter password");
         String password = scanner.nextLine();
         loggedinUser = usersService.findUserByUserName(userName);
-        if(
-                loggedinUser.getPassword().equals(password)){
+        if (
+                loggedinUser.getPassword().equals(password)) {
             System.out.println("Login successfully");
             return loggedinUser;
-        }   else {
+        } else {
             System.out.println("error");
-        }return null;
+        }
+        return null;
     }
 
-    public void autoAssignSubTask(){
-        System.out.println("You ere logged in as "+loggedinUser.getUserName());
+    public void autoAssignSubTask() {
+        System.out.println("You ere logged in as " + loggedinUser.getUserName());
         List<SubTaskModel> subTaskModels = subTaskService.getSubTaskWithoutUser();
         System.out.println("SubTasks without user:");
-        subTaskModels.forEach(s->{
-            System.out.println("(id) "+s.getId()+" (SubTask name) "+s.getName()
-            +" (Task) "+s.getTaskModel().getName()
-            +" (Project) "+s.getTaskModel().getProjectModel().getName());
+        subTaskModels.forEach(s -> {
+            System.out.println("(id) " + s.getId() + " (SubTask name) " + s.getName()
+                    + " (Task) " + s.getTaskModel().getName()
+                    + " (Project) " + s.getTaskModel().getProjectModel().getName());
         });
         System.out.println("Select subTask id to assign");
         int id = scanner.nextInt();
@@ -104,10 +104,10 @@ changeSubTaskStatus();
 
     public void changeSubTaskStatus() {
         List<SubTaskModel> subTaskModelsByUser = subTaskService.getSubTaskByUser(loggedinUser.getId());
-        subTaskModelsByUser.forEach(s->{
-            System.out.println("(id) "+s.getId()+" (SubTask name) "+s.getName()
-                    +" (Task) "+s.getTaskModel().getName()
-                    +" (Project) "+s.getTaskModel().getProjectModel().getName());
+        subTaskModelsByUser.forEach(s -> {
+            System.out.println("(id) " + s.getId() + " (SubTask name) " + s.getName()
+                    + " (Task) " + s.getTaskModel().getName()
+                    + " (Project) " + s.getTaskModel().getProjectModel().getName());
         });
         System.out.println("Select subTask id to change status in 'completed'");
         int id = scanner.nextInt();

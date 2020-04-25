@@ -82,7 +82,7 @@ public class SubTaskUI {
         Date dateD = new SimpleDateFormat("dd/MM/yyyy").parse(date);
         subTaskModel.setDeadline(dateD);
 
-        TaskModel taskModel = taskDao.findById(id);
+        TaskModel taskModel = taskDao.findTaskById(id);
         List<SubTaskModel> subTaskModelList = taskModel.getSubTaskModelList();
         subTaskModelList.add(subTaskModel);
         taskModel.setSubTaskModelList(subTaskModelList);
@@ -114,7 +114,7 @@ public class SubTaskUI {
 
     public void changeDeadLine() throws ParseException {
 
-        List<SubTaskModel> subTaskModelList = subTaskDao.getAll();
+        List<SubTaskModel> subTaskModelList = subTaskDao.getAllSubtasks();
         subTaskModelList.forEach(st -> {
             System.out.println(st.getId() + " (subTask name) " + st.getName());
         });
@@ -143,7 +143,8 @@ public class SubTaskUI {
     private void printSubTasksByUser() {
         List<SubTaskModel> subTaskModelList = findSubTaskByUser();
         subTaskModelList.forEach(s -> {
-            System.out.println("(subTask name) " + s.getName() + " (User name) " + s.getUserModel().getFirstName());
+            System.out.println("(subTask name) " + s.getName() + " (User name) " + s.getUserModel().getFirstName()
+            + " " + s.getUserModel().getLastName());
         });
     }
 
