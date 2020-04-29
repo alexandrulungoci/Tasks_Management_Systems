@@ -1,5 +1,6 @@
 package com.sdacademy.taskmanagement.UI;
 
+import com.sdacademy.taskmanagement.dao.ProjectDao;
 import com.sdacademy.taskmanagement.model.ProjectModel;
 import com.sdacademy.taskmanagement.model.SubTaskModel;
 import com.sdacademy.taskmanagement.services.ProjectService;
@@ -17,6 +18,7 @@ public class ProjectUI {
     ProjectService projectService = new ProjectService();
     SubTaskUI subTaskUI = new SubTaskUI();
     SubTaskService subTaskService = new SubTaskService();
+    ProjectDao projectDao = new ProjectDao();
 
     public void projectsMenu() throws ParseException {
         int option = 0;
@@ -58,16 +60,14 @@ public class ProjectUI {
         projectService.addProject(project);
     }
 
-    public void printProjects() {
-        List<SubTaskModel> subTaskModelList = subTaskService.getAllSubTasks();
-        subTaskModelList.forEach(p -> {
-            System.out.println("(id) " + p.getTaskModel().getProjectModel().getId()
-                    + "     (Project) " + p.getTaskModel().getProjectModel().getName()
-                    + "     (Task) " + p.getTaskModel().getName()
-                    + "     (SubTask) " + p.getName()
-                    + "     (User) " + p.getUserModel().getFirstName() + " " + p.getUserModel().getLastName());
+    public void printProjects(){
+        List<ProjectModel> projectModelList = projectService.getAllProjects();
+        projectModelList.forEach(p -> {
+            System.out.println("(id) " + p.getId()
+                    + "     (Project) " + p.getName());
         });
     }
+
 
     public void updateProject() throws ParseException {
         int option = 0;

@@ -26,7 +26,7 @@ public class ProjectService {
     public void changeProjectName(int id, String newName) {
         ProjectModel projectToBeRenamed = projectDao.findProjectById(id);
         projectToBeRenamed.setName(newName);
-        projectDao.updateProject(projectToBeRenamed);
+        updateProject(projectToBeRenamed);
     }
 
     public ProjectModel findProjectById(int id) {
@@ -35,7 +35,7 @@ public class ProjectService {
     }
 
     public void updateProject(ProjectModel projectModel) {
-        projectDao.updateProject(projectModel);
+        projectDao.update(projectModel);
     }
 
 }

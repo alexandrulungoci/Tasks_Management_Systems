@@ -89,13 +89,6 @@ public class ModelDao<T extends Model> implements DaoInterface {
         return projectModel;
     }
 
-    public void updateProject(ProjectModel project) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.merge(project);
-        transaction.commit();
-    }
-
     // Task methods
 
     public List<TaskModel> getAllTasks() {
@@ -125,13 +118,6 @@ public class ModelDao<T extends Model> implements DaoInterface {
         return query.getResultList();
     }
 
-    public void updateTask(TaskModel task) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.merge(task);
-        transaction.commit();
-    }
-
     // Subtasks methods
 
     public List<SubTaskModel> getAllSubtasks() {
@@ -140,13 +126,6 @@ public class ModelDao<T extends Model> implements DaoInterface {
         Query query = session.createQuery("from SubTaskModel", SubTaskModel.class);
         transaction.commit();
         return query.getResultList();
-    }
-
-    public void updateSubTask(SubTaskModel subTaskModel) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.merge(subTaskModel);
-        transaction.commit();
     }
 
     public SubTaskModel findSubtaskById(int id) {

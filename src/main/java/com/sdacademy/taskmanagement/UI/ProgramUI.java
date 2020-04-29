@@ -26,10 +26,10 @@ public class ProgramUI {
         subTaskModelList.forEach(sT -> {
             if (sT.getDeadline().before(date) && !sT.getStatus().equals("completed")) {
                 sT.setStatus("exceeded");
-                subTaskDao.updateSubTask(sT);
+                subTaskService.updateSubtask(sT);
             } else if (sT.getDeadline().after(date) && !sT.getStatus().equals("completed")) {
                 sT.setStatus("in progress");
-                subTaskDao.updateSubTask(sT);
+                subTaskService.updateSubtask(sT);
             }
         });
     }

@@ -24,6 +24,7 @@ public class SubTaskUI {
     SubTaskDao subTaskDao = new SubTaskDao();
     SubTaskService subTaskService = new SubTaskService();
     TaskDao taskDao = new TaskDao();
+    UserUI userUI = new UserUI();
 
     public void subTaskMenu() throws ParseException {
         int option = 0;
@@ -87,29 +88,19 @@ public class SubTaskUI {
         subTaskModelList.add(subTaskModel);
         taskModel.setSubTaskModelList(subTaskModelList);
         subTaskModel.setTaskModel(taskModel);
-        subTaskDao.updateSubTask(subTaskModel);
+        subTaskService.updateSubtask(subTaskModel);
     }
 
     public void assignUserToSubTask() {
-        List<SubTaskModel> subTaskModelList = subTaskService.getAllSubTasks();
-        subTaskModelList.forEach(s -> {
-            System.out.println(" (id) " + s.getId() + " (name) " + s.getName());
-        });
+        printSubtasks();
         System.out.println("Enter subTask id");
-        int id = scanner.nextInt();
+        int idSubtask = scanner.nextInt();
         scanner.nextLine();
-        SubTaskModel subTaskModel = subTaskService.findSubTaskById(id);
-        List<UserModel> userModelList = usersService.getUsers();
-        System.out.println("List of users:");
-        userModelList.forEach(u -> {
-            System.out.println(u.getId() + " " + u.getFirstName());
-        });
+        userUI.printUsers();
         System.out.println("Select user");
         int idUser = scanner.nextInt();
         scanner.nextLine();
-        UserModel userModel = usersService.findUserById(idUser);
-        subTaskModel.setUserModel(userModel);
-        subTaskDao.updateSubTask(subTaskModel);
+        subTaskService.assignUserToSubTask(idSubtask, idUser);
     }
 
     public void changeDeadLine() throws ParseException {
@@ -161,9 +152,7 @@ public class SubTaskUI {
             status = "exceeded";
         } else
             status = "completed";
-        List<SubTaskModel> subTaskModelList = subTaskService.getAllSubTasks().stream()
-                .filter(s -> s.getStatus().equals(status))
-                .collect(Collectors.toList());
+        List<SubTaskModel> subTaskModelList = subTaskService.chooseStatus(status);
         subTaskModelList.forEach(sT -> {
             System.out.println("(id) " + sT.getId() + " (Name) " + sT.getName() + " (Dead Line) "
                     + sT.getDeadline());

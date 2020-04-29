@@ -100,11 +100,11 @@ public class UserUI {
                     + " (Project) " + s.getTaskModel().getProjectModel().getName());
         });
         System.out.println("Select subTask id to assign");
-        int id = scanner.nextInt();
+        int idSubtask = scanner.nextInt();
         scanner.nextLine();
-        SubTaskModel subTaskById = subTaskService.findSubTaskById(id);
+        SubTaskModel subTaskById = subTaskService.findSubTaskById(idSubtask);
         subTaskById.setUserModel(loggedinUser);
-        subTaskDao.updateSubTask(subTaskById);
+        subTaskService.updateSubtask(subTaskById);
 
     }
 
@@ -121,7 +121,7 @@ public class UserUI {
         SubTaskModel subTaskModel = subTaskService.findSubTaskById(id);
         subTaskModel.setStatus("completed");
         System.out.println("Status changed");
-        subTaskDao.updateSubTask(subTaskModel);
+        subTaskService.updateSubtask(subTaskModel);
     }
 
     public void changeUsername() {

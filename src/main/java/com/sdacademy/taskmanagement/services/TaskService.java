@@ -26,7 +26,11 @@ public class TaskService {
     public void changeTaskName(int id, String newName) {
         TaskModel taskToBeRenamed = taskDao.findTaskById(id);
         taskToBeRenamed.setName(newName);
-        taskDao.updateTask(taskToBeRenamed);
+        updateTask(taskToBeRenamed);
+    }
+
+    public void updateTask(TaskModel taskModel){
+        taskDao.update(taskModel);
     }
 
 }
