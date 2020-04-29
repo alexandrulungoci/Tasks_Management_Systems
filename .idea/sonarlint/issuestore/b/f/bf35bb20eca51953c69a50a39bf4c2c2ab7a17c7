@@ -1,13 +1,9 @@
 
 …
-java:S1488/"hImmediately return this expression instead of assigning it to the temporary variable "subTaskModelList".(‹ÂÕß8àù«À‰.
-S
-java:S1128"6Remove this unused import 'org.hibernate.Transaction'.(ìÌè³8À©À‰.
-†
-java:S1488"dImmediately return this expression instead of assigning it to the temporary variable "subTaskModel".(Ç’³·şÿÿÿÿ8ñ÷¿‰.
-Š
-java:S1488*"hImmediately return this expression instead of assigning it to the temporary variable "subTaskModelList".(˜À÷úüÿÿÿÿ8åÕ±¿‰.
-T
-java:S1128"2Remove this unused import 'org.hibernate.Session'.(È¹›§ùÿÿÿÿ8À©À‰.
+java:S1488"hImmediately return this expression instead of assigning it to the temporary variable "subTaskModelList".(±»ïÄ8ØÁ›.
 …
-java:S1488"hImmediately return this expression instead of assigning it to the temporary variable "subTaskModelList".(Õˆ·¿8ñ÷¿‰.
+java:S1488-"hImmediately return this expression instead of assigning it to the temporary variable "subTaskModelList".(‹ÂÕß8àù«À‰.
+
+java:S1488"dImmediately return this expression instead of assigning it to the temporary variable "subTaskModel".(Áí»İ8ØÁ›.
+Š
+java:S1488("hImmediately return this expression instead of assigning it to the temporary variable "subTaskModelList".(˜À÷úüÿÿÿÿ8åÕ±¿‰.

@@ -20,9 +20,6 @@ public class TaskModel extends Model{
     @OneToMany(mappedBy = "taskModel")
     List<SubTaskModel> subTaskModelList = new ArrayList<>();
 
-
-
-
     public String getName() {
         return name;
     }

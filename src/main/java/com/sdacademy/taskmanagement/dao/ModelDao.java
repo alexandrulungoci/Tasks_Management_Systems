@@ -30,6 +30,14 @@ public class ModelDao<T extends Model> implements DaoInterface {
     }
 
     @Override
+    public void update(Model objectToBeUpdated) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(objectToBeUpdated);
+        transaction.commit();
+    }
+
+    @Override
     public void remove(Model objectToBeRemoved) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();

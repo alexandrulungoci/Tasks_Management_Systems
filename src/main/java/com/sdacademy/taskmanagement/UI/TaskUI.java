@@ -7,6 +7,7 @@ import com.sdacademy.taskmanagement.services.ProjectService;
 import com.sdacademy.taskmanagement.services.SubTaskService;
 import com.sdacademy.taskmanagement.services.TaskService;
 
+import java.text.ParseException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class TaskUI {
     SubTaskUI subTaskUI = new SubTaskUI();
     SubTaskService subTaskService = new SubTaskService();
 
-    public void taskMenu() {
+    public void taskMenu() throws ParseException {
         int option = 0;
         while (option != 9) {
             printTaskMenu();
@@ -36,11 +37,7 @@ public class TaskUI {
             } else if (option == 4) {
                 printTasks();
             } else if (option == 5) {
-
-            } else if (option == 6) {
-
-            } else if (option == 7) {
-
+                updateTask();
             }
         }
     }
@@ -51,9 +48,9 @@ public class TaskUI {
         System.out.println("2. Find task by user");
         System.out.println("3. Delete task");
         System.out.println("4. Print tasks");
+        System.out.println("5. Update task");
+
         System.out.println("9. Exit");
-
-
     }
 
     public void addTask() {
@@ -76,7 +73,6 @@ public class TaskUI {
 
     public void findTasksByUser() {
         List<SubTaskModel> subTaskModelList = subTaskUI.findSubTaskByUser();
-
         System.out.println("Tasks by user");
         Set<String> tasks = new HashSet<>();
         subTaskModelList.forEach(s -> {
@@ -105,6 +101,34 @@ public class TaskUI {
                     + "     (Project) " + p.getTaskModel().getProjectModel().getName()
                     + "     (User) " + p.getUserModel().getFirstName() + " " + p.getUserModel().getLastName());
         });
+    }
+
+    public void updateTask() throws ParseException {
+        int option = 0;
+        while (option != 9) {
+            printUpdateTaskMenu();
+            option = scanner.nextInt();
+            if (option == 1) {
+                changeTaskName();
+            }
+        }
+    }
+
+    public void printUpdateTaskMenu() {
+        System.out.println("1. Change task's name");
+
+        System.out.println("9. Exit");
+    }
+
+    public void changeTaskName() {
+        System.out.println("Select id of the task you want to rename");
+        printTasks();
+        System.out.println();
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter new task name");
+        String newName = scanner.nextLine();
+        taskService.changeTaskName(id, newName);
     }
 
 }

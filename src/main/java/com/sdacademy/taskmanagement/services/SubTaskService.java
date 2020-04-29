@@ -20,9 +20,6 @@ public class SubTaskService {
         subTaskDao.add(subTaskModel);
     }
 
-    public void updateSubTask(SubTaskModel subTaskModel) {
-        subTaskDao.updateSubTask(subTaskModel);
-    }
 
     public SubTaskModel findSubTaskById(int id) {
         SubTaskModel subTaskModel = subTaskDao.findSubtaskById(id);
@@ -35,14 +32,25 @@ public class SubTaskService {
         subTaskDao.updateSubTask(subTaskToBeChanged);
     }
 
-    public List<SubTaskModel> getSubTaskWithoutUser(){
+    public List<SubTaskModel> getSubTaskWithoutUser() {
         List<SubTaskModel> all = subTaskDao.getAllSubtasks();
-        List<SubTaskModel> subTaskModelList = all.stream().filter(s-> s.getUserModel()==null).collect(Collectors.toList());
+        List<SubTaskModel> subTaskModelList = all.stream().filter(s -> s.getUserModel() == null).collect(Collectors.toList());
         return subTaskModelList;
     }
 
     public List<SubTaskModel> getSubTaskByUser(int id) {
         List<SubTaskModel> subTaskModelList = subTaskDao.getSubTaskByUser(id);
         return subTaskModelList;
+    }
+
+    public void changeSubtaskName(int id, String newName) {
+        SubTaskModel subtaskToBeRenamed = subTaskDao.findSubtaskById(id);
+        subtaskToBeRenamed.setName(newName);
+        subTaskDao.updateSubTask(subtaskToBeRenamed);
+    }
+
+    public void deleteSubtask(int id) {
+        SubTaskModel subtaskToBeRemoved = subTaskDao.findSubtaskById(id);
+        subTaskDao.remove(subtaskToBeRemoved);
     }
 }

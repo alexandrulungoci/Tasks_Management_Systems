@@ -1,5 +1,6 @@
 package com.sdacademy.taskmanagement.UI;
 
+import com.sdacademy.taskmanagement.dao.SubTaskDao;
 import com.sdacademy.taskmanagement.model.SubTaskModel;
 import com.sdacademy.taskmanagement.services.SubTaskService;
 
@@ -16,6 +17,7 @@ public class ProgramUI {
     SubTaskUI subTaskUI = new SubTaskUI();
     UserUI userUI = new UserUI();
     SubTaskService subTaskService = new SubTaskService();
+    SubTaskDao subTaskDao = new SubTaskDao();
 
 
     public void setStatus() {
@@ -24,10 +26,10 @@ public class ProgramUI {
         subTaskModelList.forEach(sT -> {
             if (sT.getDeadline().before(date) && !sT.getStatus().equals("completed")) {
                 sT.setStatus("exceeded");
-                subTaskService.updateSubTask(sT);
-            } else if(sT.getDeadline().after(date) && !sT.getStatus().equals("completed") ){
+                subTaskDao.updateSubTask(sT);
+            } else if (sT.getDeadline().after(date) && !sT.getStatus().equals("completed")) {
                 sT.setStatus("in progress");
-            subTaskService.updateSubTask(sT);
+                subTaskDao.updateSubTask(sT);
             }
         });
     }
@@ -57,7 +59,6 @@ public class ProgramUI {
         System.out.println("2. Task menu");
         System.out.println("3. SubTask menu");
         System.out.println("4. User menu");
-
 
     }
 }

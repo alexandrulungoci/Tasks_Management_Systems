@@ -23,8 +23,17 @@ public class UsersService {
         return userModel;
     }
 
-    public UserModel findUserByUserName(String userName){
+    public UserModel findUserByUserName(String userName) {
         UserModel userModel = userDao.findByUserName(userName);
         return userModel;
     }
+
+    public void updateUsername(UserModel userModel) {
+        userDao.update(userModel);
+    }
+
+    public void removeUser(UserModel userModel) {
+        userDao.remove(userModel);
+    }
+
 }

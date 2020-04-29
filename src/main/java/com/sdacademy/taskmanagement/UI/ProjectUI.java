@@ -1,11 +1,9 @@
 package com.sdacademy.taskmanagement.UI;
 
-import com.sdacademy.taskmanagement.dao.ProjectDao;
 import com.sdacademy.taskmanagement.model.ProjectModel;
 import com.sdacademy.taskmanagement.model.SubTaskModel;
 import com.sdacademy.taskmanagement.services.ProjectService;
 import com.sdacademy.taskmanagement.services.SubTaskService;
-import com.sdacademy.taskmanagement.services.UsersService;
 
 import java.text.ParseException;
 import java.util.HashSet;
@@ -17,11 +15,8 @@ public class ProjectUI {
 
     Scanner scanner = new Scanner(System.in);
     ProjectService projectService = new ProjectService();
-    ProjectDao projectDao = new ProjectDao();
-    UsersService usersService = new UsersService();
     SubTaskUI subTaskUI = new SubTaskUI();
     SubTaskService subTaskService = new SubTaskService();
-
 
     public void projectsMenu() throws ParseException {
         int option = 0;
@@ -101,9 +96,8 @@ public class ProjectUI {
         scanner.nextLine();
         System.out.println("Enter new name");
         String newName = scanner.nextLine();
-        projectService.changeName(id, newName);
+        projectService.changeProjectName(id, newName);
     }
-
 
     public void deleteProject() {
         System.out.println("Select project id to delete");
@@ -114,10 +108,8 @@ public class ProjectUI {
         projectService.removeProject(id);
     }
 
-
     public void findProjectsByUser() {
         List<SubTaskModel> subTaskModelList = subTaskUI.findSubTaskByUser();
-
         System.out.println("project by user");
         Set<String> project = new HashSet<>();
         subTaskModelList.forEach(s -> {
@@ -126,7 +118,6 @@ public class ProjectUI {
         project.forEach(p -> {
             System.out.println(p);
         });
-
     }
 
 }

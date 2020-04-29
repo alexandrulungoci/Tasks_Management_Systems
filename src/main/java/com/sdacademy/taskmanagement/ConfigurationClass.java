@@ -3,7 +3,6 @@ package com.sdacademy.taskmanagement;
 import com.sdacademy.taskmanagement.model.*;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
-
 import java.util.Properties;
 
 public class ConfigurationClass {

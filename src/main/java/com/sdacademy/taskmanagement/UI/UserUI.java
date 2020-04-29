@@ -1,5 +1,6 @@
 package com.sdacademy.taskmanagement.UI;
 
+import com.sdacademy.taskmanagement.dao.SubTaskDao;
 import com.sdacademy.taskmanagement.model.SubTaskModel;
 import com.sdacademy.taskmanagement.model.UserModel;
 import com.sdacademy.taskmanagement.services.SubTaskService;
@@ -14,6 +15,7 @@ public class UserUI {
     UsersService usersService = new UsersService();
     private UserModel loggedinUser;
     SubTaskService subTaskService = new SubTaskService();
+    SubTaskDao subTaskDao = new SubTaskDao();
 
     public void userMenu() {
         int option = 0;
@@ -30,11 +32,11 @@ public class UserUI {
             } else if (option == 4) {
                 changeSubTaskStatus();
             } else if (option == 5) {
-
+                changeUsername();
             } else if (option == 6) {
-
+                printUsers();
             } else if (option == 7) {
-
+                removeUser();
             }
         }
     }
@@ -46,7 +48,10 @@ public class UserUI {
         System.out.println("2. Login");
         System.out.println("3. Auto assign subTask");
         System.out.println("4. Change subTask status");
-
+        System.out.println("5. Change username");
+        System.out.println("6. Print users");
+        System.out.println("7. Remove user");
+        System.out.println();
         System.out.println("9. Exit");
 
     }
@@ -78,14 +83,15 @@ public class UserUI {
                 loggedinUser.getPassword().equals(password)) {
             System.out.println("Login successfully");
             return loggedinUser;
-        } else {
+        } else
             System.out.println("error");
-        }
+
+        printUserMenu();
         return null;
     }
 
     public void autoAssignSubTask() {
-        System.out.println("You ere logged in as " + loggedinUser.getUserName());
+        System.out.println("You ere loggedin in as " + loggedinUser.getUserName());
         List<SubTaskModel> subTaskModels = subTaskService.getSubTaskWithoutUser();
         System.out.println("SubTasks without user:");
         subTaskModels.forEach(s -> {
@@ -98,7 +104,7 @@ public class UserUI {
         scanner.nextLine();
         SubTaskModel subTaskById = subTaskService.findSubTaskById(id);
         subTaskById.setUserModel(loggedinUser);
-        subTaskService.updateSubTask(subTaskById);
+        subTaskDao.updateSubTask(subTaskById);
 
     }
 
@@ -115,8 +121,37 @@ public class UserUI {
         SubTaskModel subTaskModel = subTaskService.findSubTaskById(id);
         subTaskModel.setStatus("completed");
         System.out.println("Status changed");
-        subTaskService.updateSubTask(subTaskModel);
+        subTaskDao.updateSubTask(subTaskModel);
     }
 
+    public void changeUsername() {
+        if (loggedinUser == null) {
+            System.out.println("Please login");
+            login();
+        }
+        System.out.println("You ere loggedin in as " + loggedinUser.getUserName());
+        System.out.println("Enter new username");
+        String newUsername = scanner.nextLine();
+        loggedinUser.setUserName(newUsername);
+        usersService.updateUsername(loggedinUser);
+
+    }
+
+    public void printUsers() {
+        List<UserModel> allUsers = usersService.getUsers();
+        allUsers.forEach(u -> {
+            System.out.println("(Id) " + u.getId() + " (Name) " + u.getFirstName() + " " + u.getLastName()
+                    + " (username) " + u.getUserName());
+        });
+    }
+
+    public void removeUser() {
+        printUsers();
+        System.out.println("Select user id to remove");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        UserModel userToRemove = usersService.findUserById(id);
+        usersService.removeUser(userToRemove);
+    }
 
 }

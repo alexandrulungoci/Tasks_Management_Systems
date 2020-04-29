@@ -13,7 +13,7 @@ public class ProjectService {
         projectDao.add(project);
     }
 
-    public List<ProjectModel> getAllProjects(){
+    public List<ProjectModel> getAllProjects() {
         List<ProjectModel> projectModelList = projectDao.getAllProjects();
         return projectModelList;
     }
@@ -23,7 +23,7 @@ public class ProjectService {
         projectDao.remove(projectToBeRemoved);
     }
 
-    public void changeName(int id, String newName) {
+    public void changeProjectName(int id, String newName) {
         ProjectModel projectToBeRenamed = projectDao.findProjectById(id);
         projectToBeRenamed.setName(newName);
         projectDao.updateProject(projectToBeRenamed);
