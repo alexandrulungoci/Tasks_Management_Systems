@@ -1,9 +1,11 @@
 package com.sdacademy.taskmanagement.services;
 
+import com.sdacademy.taskmanagement.UI.exceptions.WrongCredentialsException;
 import com.sdacademy.taskmanagement.dao.UserDao;
 import com.sdacademy.taskmanagement.model.UserModel;
 
 import java.util.List;
+import java.util.Optional;
 
 public class UsersService {
 
@@ -23,9 +25,13 @@ public class UsersService {
         return userModel;
     }
 
-    public UserModel findUserByUserName(String userName) {
-        UserModel userModel = userDao.findByUserName(userName);
-        return userModel;
+    public UserModel findUserByUserName(String userName) throws WrongCredentialsException {
+        Optional<UserModel> userModel = userDao.findByUserName(userName);
+        if(userModel.isPresent()){
+            return userModel.get();
+        } else {
+            throw new WrongCredentialsException();
+        }
     }
 
     public void updateUsername(UserModel userModel) {

@@ -1,15 +1,15 @@
 
-c
-java:S3252"HUse static access with "org.hibernate.cfg.AvailableSettings" for "USER".(Ì¦ˆ÷øÿÿÿÿ
-g
-java:S3252"LUse static access with "org.hibernate.cfg.AvailableSettings" for "SHOW_SQL".(ÌŸåøÿÿÿÿ
 ]
-java:S3252"GUse static access with "org.hibernate.cfg.AvailableSettings" for "URL".(‡íü•
-k
-java:S3252"PUse static access with "org.hibernate.cfg.AvailableSettings" for "HBM2DDL_AUTO".(Îôà°ûÿÿÿÿ
-e
-java:S3252"JUse static access with "org.hibernate.cfg.AvailableSettings" for "DRIVER".(´ÖûÕÿÿÿÿÿ
-a
-java:S3252"KUse static access with "org.hibernate.cfg.AvailableSettings" for "DIALECT".(øŒÒŞ
+java:S3252"GUse static access with "org.hibernate.cfg.AvailableSettings" for "URL".(‡íü•
 ^
-java:S3252"HUse static access with "org.hibernate.cfg.AvailableSettings" for "PASS".(°öªƒ
+java:S3252"HUse static access with "org.hibernate.cfg.AvailableSettings" for "PASS".(°öªƒ
+g
+java:S3252"LUse static access with "org.hibernate.cfg.AvailableSettings" for "SHOW_SQL".(ÌŸåøÿÿÿÿ
+a
+java:S3252"KUse static access with "org.hibernate.cfg.AvailableSettings" for "DIALECT".(øŒÒŞ
+e
+java:S3252"JUse static access with "org.hibernate.cfg.AvailableSettings" for "DRIVER".(´ÖûÕÿÿÿÿÿ
+c
+java:S3252"HUse static access with "org.hibernate.cfg.AvailableSettings" for "USER".(Ì¦ˆ÷øÿÿÿÿ
+k
+java:S3252"PUse static access with "org.hibernate.cfg.AvailableSettings" for "HBM2DDL_AUTO".(Îôà°ûÿÿÿÿ

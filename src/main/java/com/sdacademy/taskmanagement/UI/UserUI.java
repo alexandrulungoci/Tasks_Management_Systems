@@ -1,5 +1,6 @@
 package com.sdacademy.taskmanagement.UI;
 
+import com.sdacademy.taskmanagement.UI.exceptions.WrongCredentialsException;
 import com.sdacademy.taskmanagement.dao.SubTaskDao;
 import com.sdacademy.taskmanagement.model.SubTaskModel;
 import com.sdacademy.taskmanagement.model.UserModel;
@@ -74,20 +75,31 @@ public class UserUI {
     }
 
     public UserModel login() {
-        System.out.println("Enter User Name");
-        String userName = scanner.nextLine();
+        UserModel user = findUser();
         System.out.println("Enter password");
         String password = scanner.nextLine();
-        loggedinUser = usersService.findUserByUserName(userName);
-        if (
-                loggedinUser.getPassword().equals(password)) {
-            System.out.println("Login successfully");
+        if (user.getPassword().equals(password)) {
+            loggedinUser = user;
+            System.out.println("You ere loggedin in as " + loggedinUser.getUserName());
             return loggedinUser;
-        } else
-            System.out.println("error");
-
-        printUserMenu();
+        } else {
+            System.out.println("Wrong password");
+        }
         return null;
+    }
+
+    public UserModel findUser() {
+        UserModel userFound = null;
+        while (userFound == null) {
+            System.out.println("Enter User Name");
+            String name = scanner.nextLine();
+            try {
+                userFound = usersService.findUserByUserName(name);
+            } catch (WrongCredentialsException e) {
+                System.out.println("Wrong username. Enter again!");
+            }
+        }
+        return userFound;
     }
 
     public void autoAssignSubTask() {

@@ -9,6 +9,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ModelDao<T extends Model> implements DaoInterface {
@@ -63,12 +64,16 @@ public class ModelDao<T extends Model> implements DaoInterface {
         return userModel;
     }
 
-    public UserModel findByUserName(String userName) {
+    public Optional<UserModel> findByUserName(String userName) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("from UserModel where userName = '" + userName + "'", UserModel.class);
         List<UserModel> userModelList = query.getResultList();
-        return userModelList.get(0);
+        if (userModelList.isEmpty()){
+            return Optional.empty();
+        }
+
+        return Optional.of(userModelList.get(0));
     }
 
     // Project methods
