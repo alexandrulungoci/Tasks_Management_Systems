@@ -1,35 +1,49 @@
 
-g
-java:S2095""EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8ìƒæÁ›.
 `
-java:S2095"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+java:S2095l"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
 `
-java:S2095M"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+java:S2095R"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
 `
-java:S2095|"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+java:S2095t"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
 a
-java:S2095„"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+java:S1854E"?Remove this useless assignment to local variable "transaction".(¹æ¢üÿÿÿÿ8›®à¶.
+g
+java:S20954"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½Äì²œ.
+M
+java:S3740ƒ"/Provide the parametrized type for this generic.(Öˆ…8ƒˆŞ¶.
+g
+java:S2095#"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8ìƒæÁ›.
+L
+java:S3740"/Provide the parametrized type for this generic.(â¤½­8ƒˆŞ¶.
+`
+java:S2095"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+L
+java:S37406"/Provide the parametrized type for this generic.(àÒ»8ƒˆŞ¶.
+`
+java:S2095d"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+g
+java:S2095<"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½Äì²œ.
+`
+java:S2095Z"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+L
+java:S3740F"/Provide the parametrized type for this generic.(ÔÔúª8›®à¶.
 a
-java:S1854D"?Remove this useless assignment to local variable "transaction".(¹æ¢üÿÿÿÿ8½Äì²œ.
-`
-java:S2095U"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
-`
-java:S2095g"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+java:S2095‰"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+K
+java:S3740T"/Provide the parametrized type for this generic.(Ş¡¦8ƒˆŞ¶.
+Q
+java:S3740f"/Provide the parametrized type for this generic.(¦›µ”úÿÿÿÿ8ƒˆŞ¶.
 g
-java:S2095*"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8…ùÀØ›.
-R
-java:S1481D"0Remove this unused "transaction" local variable.(¹æ¢üÿÿÿÿ8½Äì²œ.
-g
-java:S2095;"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½Äì²œ.
-g
-java:S2095C"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½Äì²œ.
+java:S2095D"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8›®à¶.
+a
+java:S2095‘"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+Q
+java:S3740v"/Provide the parametrized type for this generic.(ûƒî’øÿÿÿÿ8ƒˆŞ¶.
 1
-java:S2326"T is not used in the class.(â¤½­
-`
-java:S2095_"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+java:S2326"T is not used in the class.(â¤½­
+R
+java:S1481E"0Remove this unused "transaction" local variable.(¹æ¢üÿÿÿÿ8›®à¶.
 g
-java:S20953"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8½Äì²œ.
+java:S2095+"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ8…ùÀØ›.
 a
-java:S2095Œ"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
-`
-java:S2095o"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ
+java:S2095"EUse try-with-resources or close this "Session" in a "finally" clause.(´Ï‚‘ùÿÿÿÿ

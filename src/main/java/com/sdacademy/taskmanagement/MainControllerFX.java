@@ -10,7 +10,7 @@ import javafx.fxml.FXML;
 import java.text.ParseException;
 
 
-public class MainController {
+public class MainControllerFX {
 
     ProjectUI projectUI = new ProjectUI();
     TaskUI taskUI = new TaskUI();

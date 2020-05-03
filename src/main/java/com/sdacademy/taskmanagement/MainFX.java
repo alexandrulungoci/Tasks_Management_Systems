@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-public class MainFxml extends Application {
+public class MainFX extends Application {
 
 
     public static void main(String[] args) {
